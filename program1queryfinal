@@ -1,0 +1,99 @@
+/*Aaron Foltz - G00579603*/
+/*Due November 3*/
+/*CS330*/
+
+article(X,name(_,knuth),_,1993,_).
+	What codes are associated with any article written by knuth in 1993?
+art2art(X,176).
+	Which article refers to the article with code 176?
+authchain(knuth,smith).
+	Is there a chain of reference from Knuth to Smith?
+publbefore(X,'Algorithms',1980).
+	What article titles were written about algorithms before 1980?
+art2art(123,X),refbefore(X,1995).
+	Which articles does 123 refer to that were written before 1995?
+
+subj2subj(X,Y).
+	Which two codes share a subject?
+subj2subj(_,Y).
+	Who shares a subject with someone?
+publbefore(_,X,1990).
+	Which subjects were written about before 1990?
+refbefore(X,1990),art2art(X,123).
+	Which article codes were written before 1990 and reference article 123?
+article(_,name(_,L),_,_,_).	
+	Who has an article in the database?
+article(X,name(_,L),_,_,_),art2art(X,123).
+	Who in this database references to article 123?
+subj2subj(X,Y),art2art(X,Y).
+	Who shares a subject and refers to who?
+art2art(X,X).
+	Who refers to itself?
+art2art(_,_).
+	Does anyone reference someone else?
+subj2subj(_,_).
+	Does anyone share a subject?
+subj2subj(_,X),refbefore(X,1990).
+	Which article was written before 1990 and shares a subject?
+authchain(withers,smith).
+	Is there a chain of references from Withers to Smith?
+authchain(_,smith).
+	Is there a chain of references to Smith?
+authchain(X,Y).
+	Who has a reference chain to who?
+authchain(_,X).
+	Who has a reference chain to them?
+art2art(X,Y),refbefore(Y,1980).
+	Who references to an article that was written before 1980?
+refbefore(X,1980).
+	What article was written before 1980?
+authchain(_,_).
+	Is there a chain of reference in the database?
+art2art(X,Y),subj2subj(X,Y).
+	Who references someone that has the same subject?
+article(_,name(_,_),_,_,_).
+	Is there an article in the database?
+article(X,name(_,_),_,_,_),subj2subj(X,Y),art2art(X,Y).
+	Who references someone that has the same subject?
+art2art(_,_),subj2subj(_,_).
+	Does an article reference another article that has the same subject?
+publbefore(_,_,1970).
+	Was any article written before 1970?
+publbefore('Dont Fail',_,1990).
+	Was the article titled "Dont Fail" written before 1990?
+article(111,name(X,Y),_,_,_).
+	Who wrote the article with code "111"?
+article(_,name(_,knuth),X,_,_).
+	What were the titles of the articles written by an author with last name 'knuth'?
+article(_,name(_,smith),_,_,_).
+	Did smith write any articles?
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
